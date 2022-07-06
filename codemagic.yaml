@@ -10,8 +10,8 @@ workflows:
           # FCI_KEYSTORE_PASSWORD <-- Put your keystore password here
           # FCI_KEY_PASSWORD <-- Put your keystore alias password here
         # FCI_KEY_ALIAS <-- Put your keystore alias username here
-        - google_play # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS <-- Put CONTENTS of your Gloud crendentials file here)
-        - firebase_token # <-- (Includes ANDROID_FIREBASE_SECRET)
+#        - google_play # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS <-- Put CONTENTS of your Gloud crendentials file here)
+#        - firebase_token # <-- (Includes ANDROID_FIREBASE_SECRET)
         - other
       vars:
         CM_KEYSTORE_PATH: /tmp/keystore.keystore
@@ -68,16 +68,16 @@ workflows:
         notify:
           success: true               # To not receive a notification when a build succeeds
           failure: false              # To not receive a notification when a build fails
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: internal
-        in_app_update_priority: 0
-      firebase:
-        firebase_token: $ANDROID_FIREBASE_SECRET
-        android:
-          app_id: x:xxxxxxxxxxxx:android:xxxxxxxxxxxxxxxxxxxxxx
-          groups:
-            - androidTesters
+#      google_play:
+#        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+#        track: internal
+#        in_app_update_priority: 0
+#      firebase:
+#        firebase_token: $ANDROID_FIREBASE_SECRET
+#        android:
+#          app_id: x:xxxxxxxxxxxx:android:xxxxxxxxxxxxxxxxxxxxxx
+#          groups:
+#            - androidTesters
 
   ios-workflow:
     name: iOS Workflow
